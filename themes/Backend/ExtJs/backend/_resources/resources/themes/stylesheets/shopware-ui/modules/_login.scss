@@ -27,12 +27,31 @@
  * @author shopware AG
  */
 .login-window {
-    background: theme-image($theme, 'login_background.png') no-repeat;
+    background: none;
     color: #475c6a;
+    border-width: 115px 15px 15px;
+    border-style: solid;
+    -webkit-border-image: theme-image($theme, 'login_background.png') 115 15 15 repeat;
+    -moz-border-image: theme-image($theme, 'login_background.png') 115 15 15 repeat;
+    -o-border-image: theme-image($theme, 'login_background.png') 115 15 15 repeat;
+    border-image: theme-image($theme, 'login_background.png') 115 15 15 fill repeat;
 
     .#{$prefix}window-body {
         background: transparent;
         border: 0 none !important;
+    }
+
+    .#{$prefix}toolbar {
+        margin-top: -10px;
+    }
+
+    .#{$prefix}window-body .#{$prefix}window-item {
+        margin: 0 -15px;
+    }
+
+    .#{$prefix}box-layout-ct,
+    .#{$prefix}border-layout-ct {
+        overflow: visible;
     }
 
     /** Footer toolbar */
@@ -49,7 +68,7 @@
     }
 
     h1 {
-        margin: 120px 0 25px 0;
+        margin: 5px 0 25px 0;
         font-size: 18px;
         line-height: 21px;
         text-align: center;
