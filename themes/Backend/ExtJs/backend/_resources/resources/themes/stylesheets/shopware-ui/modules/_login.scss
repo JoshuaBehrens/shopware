@@ -27,12 +27,33 @@
  * @author shopware AG
  */
 .login-window {
-    background: theme-image($theme, 'login_background.png') no-repeat;
+    &::before {
+        position: absolute;
+        content: "";
+        background: theme-image($theme, 'shopware_5_logo.png') no-repeat center center, -webkit-linear-gradient(to bottom, #20b3fc, #0480d6);
+        background: theme-image($theme, 'shopware_5_logo.png') no-repeat center center, -moz-linear-gradient(to bottom, #20b3fc, #0480d6);
+        background: theme-image($theme, 'shopware_5_logo.png') no-repeat center center, -o-linear-gradient(to bottom, #20b3fc, #0480d6);
+        background: theme-image($theme, 'shopware_5_logo.png') no-repeat center center, -ms-linear-gradient(to bottom, #20b3fc, #0480d6);
+        background: theme-image($theme, 'shopware_5_logo.png') no-repeat center center, linear-gradient(to bottom, #20b3fc, #0480d6);
+        width: 100px;
+        height: 100px;
+        display: block;
+        top: -115px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include border-radius(50%);
+    }
+
     color: #475c6a;
+    background: rgba(255, 255, 255, 0.5);
+    overflow: visible;
+    border-width: 64px 5px 5px 5px;
+    border-image: theme-image($theme, 'login_border.png') 64 5 5 5 repeat stretch;
 
     .#{$prefix}window-body {
         background: transparent;
         border: 0 none !important;
+        margin: -115px -5px -5px 0;
     }
 
     /** Footer toolbar */
